@@ -1,0 +1,20 @@
+run project
+python3 -m venv venv 
+
+source venv/bin/activate
+
+pip install -r requirementst.txt
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+uvicorn core.asgi:application --host 127.0.0.1 --port 8000
+
+run postgres in docker
+
+sudo docker run -e POSTGRES_DB=project -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD="2006" -p 5432:5432 -d postgres
+
+run redis in docker
+
+sudo docker run -p 6379:6379 redis

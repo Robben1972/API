@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            overflow: hidden;
+        }
+
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .form-box.hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #6e8efb;
+            box-shadow: 0 0 5px rgba(110, 142, 251, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #6e8efb;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #5a78e0;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        p {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #5a78e0;
+            text-decoration: underline;
+        }
+
+        /* Animation for form switch */
+        .form-box {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .form-box {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div class="form-box" id="login-box">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-box hidden" id="register-box">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+    <script>
+        function showRegister() {
+            document.getElementById('login-box').classList.add('hidden');
+            document.getElementById('register-box').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('register-box').classList.add('hidden');
+            document.getElementById('login-box').classList.remove('hidden');
+        }
+
+        function login() {
+            // Placeholder for login functionality
+            alert('Login functionality to be implemented');
+        }
+
+        function register() {
+            // Placeholder for register functionality
+            alert('Register functionality to be implemented');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
